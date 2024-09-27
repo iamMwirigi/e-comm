@@ -1,3 +1,12 @@
+/* Apply a global font style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'EB Garamond', serif; /* Set EB Garamond as the global font */
+}
+
+/* Specific styles for the App layout */
 .App {
   text-align: center;
 }
@@ -22,12 +31,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: 'Cormorant Garamond', serif; /* Apply Cormorant Garamond to the header */
 }
 
 .App-link {
   color: #61dafb;
+  font-family: 'Suwannaphum', serif; /* Apply Suwannaphum to links */
 }
 
+/* Add spinning animation to the logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
