@@ -5,7 +5,6 @@
 }
 .productdisplay-left{
     display: flex;
-    gap: 17px;
 }
 .productdisplay-right-img-list{
     display: flex;
@@ -82,9 +81,9 @@
     outline: none;
     cursor: pointer;
 }
-.productdisplay-right-catgory{
+.productdisplay-right-category{
     margin-top: 10px;
 }
-.productdisplay-right-catgory span{
+.productdisplay-right-category span{
     font-weight: 600;
 }

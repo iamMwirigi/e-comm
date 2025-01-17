@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-logo">
         <img src={footer_logo} alt="Footer Logo" />
-        <p>SHOPPER</p>
+        <p>THOKO</p>
       </div>
       <ul className="footer-links">
         <li>Company</li>
@@ -20,16 +20,23 @@ const Footer = () => {
         <li>Contact</li>
       </ul>
       <div className="footer-social-icon">
-        <div className="footer-icons-container">
-          <img src={instagram_icon} alt="Instagram Icon" />
-        </div>
-        <div className="footer-icons-container">
-          <img src={pinterest_icon} alt="Pinterest Icon" />
-        </div>
-        <div className="footer-icons-container">
-          <img src={whatsapp_icon} alt="WhatsApp Icon" />
-        </div>
-      </div>
+  <div className="footer-icons-container">
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <img src={instagram_icon} alt="Instagram Icon" />
+    </a>
+  </div>
+  <div className="footer-icons-container">
+    <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
+      <img src={pinterest_icon} alt="Pinterest Icon" />
+    </a>
+  </div>
+  <div className="footer-icons-container">
+    <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+      <img src={whatsapp_icon} alt="WhatsApp Icon" />
+    </a>
+  </div>
+</div>
+
       <div className="footer-copyright">
         <hr />
         <p>Copyright &copy; 2025 - All Rights Reserved</p>
