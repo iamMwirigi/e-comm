@@ -62,13 +62,27 @@
     margin: 30px 0px;
     gap: 20px;
 }
-.productdisplay-right-sizes div{
-    padding: 18px 24px;
+.productdisplay-right .productdisplay-right-sizes button{ /* Increased specificity */
+    padding: 6px 10px; /* Adjusted for better visibility, still compact */
     background: #fbfbfb;
     border: 1px solid #ebebeb;
     border-radius: 3px;
     cursor: pointer;
+    color: #656565; /* Text color for the size buttons */
+    font-weight: 500; /* Slightly less bold than the main button */
+    font-size: 14px; /* Reduced font size */
+    /* Override general button styles that are not suitable here */
+    width: auto; /* Allow buttons to size based on content */
+    margin-bottom: 0; /* Remove bottom margin if inherited */
+    outline: none; /* Keep outline reset from general button style */
 }
+
+.productdisplay-right .productdisplay-right-sizes button.selected {
+    background: #e0e0e0; /* Example: A slightly darker background for selected */
+    border-color: #adadad; /* Example: A darker border for selected */
+    color: #333; /* Example: Darker text for selected */
+}
+
 .productdisplay-right button{
     padding: 20px 40px;
     width: 200px;

@@ -1,0 +1,200 @@
+/* Define CSS Variables for theme consistency */
+:root {
+  --primary-bg-color: #F0EFE7; /* Background color for the page */
+  --container-bg-color: #fff; /* Background color for the form container */
+  --primary-text-color: #333; /* Dark text color */
+  --secondary-text-color: #5a5656; /* Gray text color */
+  --accent-color: #ebe1e1; /* New button background color */
+  --accent-color-dark: #cd0707; /* Darker red */
+  --accent-color-hover: #e0d6d6; /* Darker shade for new button hover */
+  --input-border-color: #ddd; /* Light gray border for inputs */
+  --border-radius-small: 4px; /* Small border radius */
+  --border-radius-medium: 8px; /* Medium border radius for container */
+  --spacing-small: 10px;
+  --spacing-medium: 15px;
+  --spacing-large: 20px;
+  --spacing-xlarge: 25px;
+}
+
+/* Container for the entire sign-up form */
+.loginsignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; /* Use min-height to accommodate content */
+    background: var(--primary-bg-color); /* Use variable */
+    padding: 50px 20px; /* Vertical and horizontal padding */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+  .loginsignup-container {
+    background-color: var(--container-bg-color); /* Use variable */
+    padding: 40px; /* Adjusted padding */
+    border-radius: var(--border-radius-medium); /* Use variable */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    max-width: 400px; /* Set a max-width for the form */
+    margin: auto; /* Center the container */
+    text-align: center;
+    font-family: 'Poppins', 'Arial', sans-serif; /* Assuming Poppins, fallback to Arial */
+  }
+
+  /* Title within the login/signup container */
+  .loginsignup-container h1 {
+    font-size: 2rem; /* Use rem */
+    margin-bottom: var(--spacing-large); /* Use variable */
+    color: var(--primary-text-color); /* Use variable */
+    font-weight: 600;
+  }
+  
+  .loginsignup-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium); /* Use variable for spacing between fields */
+  }
+
+  .loginsignup-fields input {
+    width: 100%; /* Full width */
+    padding: var(--spacing-small) var(--spacing-medium); /* Use variables for padding */
+    border: 1px solid var(--input-border-color); /* Use variable */
+    border-radius: var(--border-radius-small); /* Use variable */
+    font-size: 1rem; /* Use rem */
+    box-sizing: border-box;
+    color: var(--primary-text-color); /* Use variable */
+  }
+
+  /* Specific styling for the password input container */
+  .password-input-container {
+    position: relative; /* Needed to position the icon absolutely */
+    width: 100%;
+  }
+
+  /* Ensure password input inside the container still takes full width and has space for icon */
+  .password-input-container input {
+    width: 100%;
+    padding-right: 40px; /* Add padding to the right for the icon */
+    box-sizing: border-box;
+  }
+
+  /* Style for the password toggle icon */
+  .password-toggle-icon {
+    position: absolute;
+    top: 50%; /* Vertically center */
+    right: var(--spacing-medium); /* Position from the right using variable */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    cursor: pointer;
+    font-size: 1.2rem; /* Use rem */
+    color: var(--secondary-text-color); /* Use variable */
+    user-select: none; /* Prevent text selection */
+  }
+
+  .loginsignup-fields input:focus {
+    outline: none; /* Remove default outline */
+    border-color: var(--accent-color); /* Use variable */
+    box-shadow: 0 0 0 2px rgba(235, 225, 225, 0.3); /* Subtle glow with new accent color */
+  }
+  
+  .loginsignup-container button {
+    width: 100%; /* Full-width button */
+    padding: var(--spacing-medium); /* Use variable */
+    background-color: var(--accent-color); /* Use variable */
+    color: var(--primary-text-color); /* Changed to dark text for contrast */
+    border: none; /* Remove borders */
+    border-radius: var(--border-radius-small); /* Use variable */
+    font-size: 1rem; /* Use rem */
+    font-weight: 500; /* Adjusted font weight */
+    cursor: pointer; /* Show pointer on hover */
+    margin-top: var(--spacing-small); /* Space above the button */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adjusted transition */
+  }
+  
+  .loginsignup-container button:not(:disabled):hover {
+    background-color: var(--accent-color-hover); /* Darker red on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    /* Removed transform: scale(1.1); */
+  }
+
+  .loginsignup-container button:disabled {
+    background-color: #ccc; /* Greyed out when disabled */
+    cursor: not-allowed;
+    transform: none; /* No scale transform when disabled */
+  }
+
+
+  /* Specific styling for the Google Sign-In button */
+  .google-signin-button {
+    background-color: var(--container-bg-color); /* White background */
+    color: var(--primary-text-color); /* Darker text color */
+    border: 1px solid #dadce0; /* Standard Google button border */
+    display: flex; /* To align icon and text */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15); /* Google's shadow */
+    transition: background-color .3s, border-color .3s, box-shadow .3s;
+    margin-top: var(--spacing-small); /* Space above the button */
+  }
+
+  .google-signin-button:not(:disabled):hover {
+    background-color: #f8f9fa; /* Slight gray on hover */
+    border-color: #c6c6c6;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+    transform: none; /* Override general button hover transform if any */
+  }
+
+  .google-signin-button svg { /* Style for the SVG icon */
+    display: block; /* Ensures it behaves like a block element for alignment */
+    margin-right: var(--spacing-small); /* Space between icon and text */
+  }
+
+  /* Text below the form, like "Don't have an account?" */
+  .loginsignup-login {
+    font-size: 0.9rem; /* Use rem */
+    color: var(--secondary-text-color); /* Use variable */
+    margin-top: var(--spacing-large); /* Use variable */
+    text-align: left; /* Align to the left */
+    padding-left: var(--spacing-medium); /* Match input's left padding for visual alignment */
+  }
+
+  /* Styling for the "Sign Up here" link */
+  .loginsignup-login span,
+  .loginsignup-login a {
+    color:  var(--accent-color-dark); /* Changed to red for visibility */
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+    font-weight: 600; /* Make it a bit bolder */
+  }
+  
+  .loginsignup-login span:hover {
+    text-decoration: underline; /* Underline on hover */
+    /* Color remains --accent-color-dark, or you can choose a slightly different shade if needed */
+  }
+  /* Terms and conditions container */
+  .loginsignup-agree {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically align checkbox and text */
+    /* Removed justify-content: center; to align left */
+    font-size: 0.8rem; /* Use rem */
+    color: var(--primary-text-color); /* Use variable */
+    margin-top: var(--spacing-xlarge); /* Use variable */
+    gap: var(--spacing-small); /* Use variable for gap */
+  }
+  
+  .loginsignup-agree input[type="checkbox"] {
+    width: auto; /* Override the general input width for the checkbox */
+    margin: 0; /* Remove default margin */
+    accent-color: var(--accent-color-dark); /* Changed to red for visibility */
+  }
+  
+
+  .loginsignup-agree label {
+    cursor: pointer;
+  }
+
+  /* Error message styling */
+  .loginsignup-error {
+    color: var(--accent-color-dark); /* Use variable */
+    font-size: 0.9em;
+    margin-bottom: 15px; /* Space below the error message */
+    text-align: left; /* Align error to the left for better readability in a form */
+  }
+  

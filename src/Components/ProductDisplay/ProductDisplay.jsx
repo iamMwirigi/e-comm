@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'; // Added `useContext`
+import React, { useContext, useState } from 'react'; // Added `useContext` and `useState`
 import './ProductDisplay.css';
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
@@ -8,6 +8,13 @@ const ProductDisplay = (props) => {
   
   const { product } = props;
   const { addToCart } = useContext(ShopContext); 
+  const [selectedSize, setSelectedSize] = useState(''); // State to track selected size
+
+  const handleSizeSelect = (size) => {
+    console.log("Attempting to select size:", size);
+    setSelectedSize(size);
+  };
+  console.log("Current selectedSize state:", selectedSize); // Log current state on re-render
 
   return (
     <div className='productdisplay'>
@@ -44,11 +51,36 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-right-size">
           <h1>Select Size</h1>
           <div className="productdisplay-right-sizes"> 
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
+            <button 
+              onClick={() => handleSizeSelect('S')}
+              className={selectedSize === 'S' ? 'selected' : ''}
+            >
+              S
+            </button>
+            <button 
+              onClick={() => handleSizeSelect('M')}
+              className={selectedSize === 'M' ? 'selected' : ''}
+            >
+              M
+            </button>
+            <button 
+              onClick={() => handleSizeSelect('L')}
+              className={selectedSize === 'L' ? 'selected' : ''}
+            >
+              L
+            </button>
+            <button 
+              onClick={() => handleSizeSelect('XL')}
+              className={selectedSize === 'XL' ? 'selected' : ''}
+            >
+              XL
+            </button>
+            <button 
+              onClick={() => handleSizeSelect('XXL')}
+              className={selectedSize === 'XXL' ? 'selected' : ''}
+            >
+              XXL
+            </button>
           </div>
         </div>
         <button onClick={() => addToCart(product.id)}>ADD TO CART</button>

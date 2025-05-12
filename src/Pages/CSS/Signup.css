@@ -1,0 +1,130 @@
+.loginsignup {
+  width: 100%;
+  min-height: 90vh; /* Use min-height to accommodate content */
+  background: #F0EFE7; /* Updated background color */
+  padding: 50px 20px; /* Vertical and horizontal padding */
+  box-sizing: border-box;
+  display: flex; /* Helps in centering the container if needed */
+  align-items: center; /* Vertically center container */
+  justify-content: center; /* Horizontally center container */
+}
+
+.loginsignup-container {
+  width: 100%; 
+  max-width: 500px; /* Slightly adjusted max-width for a common form size */
+  margin: auto; 
+  background: white;
+  padding: 40px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  font-family: 'Poppins', 'Arial', sans-serif; /* Assuming Poppins is part of your theme, fallback to Arial */
+}
+
+.loginsignup-container h1 {
+  font-size: 28px; /* Adjusted title size */
+  margin-bottom: 25px; 
+  color: #333; 
+  text-align: center; 
+  font-weight: 600;
+}
+
+.loginsignup-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between input fields */
+}
+
+.loginsignup-fields input {
+  width: 100%; 
+  padding: 12px 15px; 
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  font-size: 15px; 
+  box-sizing: border-box; 
+  color: #333;
+}
+
+.loginsignup-fields input::placeholder {
+  color: #999;
+}
+
+.loginsignup-fields input:focus {
+  outline: none;
+  border-color: #ff4141; 
+  box-shadow: 0 0 0 2px rgba(255, 65, 65, 0.2); 
+}
+
+.loginsignup-container button {
+  width: 100%; 
+  padding: 12px; /* Adjusted button padding */
+  background-color: #ff4141; /* Theme red color */
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  font-weight: 500;
+  cursor: pointer; 
+  margin-top: 10px; /* Space above the button */
+  transition: background-color 0.3s ease, transform 0.1s ease; 
+}
+
+.loginsignup-container button:not(:disabled):hover {
+  background-color: #e03030; /* Darker red on hover */
+  transform: translateY(-1px); /* Subtle lift effect */
+}
+
+.loginsignup-container button:disabled {
+  background-color: #f0a0a0; /* Lighter, desaturated red when disabled */
+  cursor: not-allowed;
+}
+
+.loginsignup-login {
+  font-size: 14px; 
+  color: #555; 
+  margin-top: 20px; 
+  text-align: center; 
+}
+
+.loginsignup-login span, 
+.loginsignup-login a { 
+  color:  #ff4141; /* Theme red for links */
+  cursor: pointer;
+  text-decoration: none; 
+  font-weight: 600; 
+}
+  
+.loginsignup-login span:hover,
+.loginsignup-login a:hover {
+  text-decoration: underline; 
+}
+  
+.loginsignup-agree {
+  display: flex; 
+  align-items: center; 
+  font-size: 13px; 
+  color: #444; 
+  margin-top: 20px; 
+  gap: 8px; /* Gap between checkbox and label */
+}
+  
+.loginsignup-agree input[type="checkbox"] {
+  width: auto; 
+  margin: 0; /* Remove default margin if any */
+  accent-color: #ff4141; /* Theme color for checkbox */
+}
+
+.loginsignup-agree label {
+  cursor: pointer;
+  /* margin-left: 5px; /* This was an inline style, now handled by gap on parent */
+}
+  
+.loginsignup-error {
+  color: #d93025; /* A common error red color */
+  font-size: 14px;
+  margin-bottom: 15px; 
+  text-align: left; 
+  padding: 8px 12px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
