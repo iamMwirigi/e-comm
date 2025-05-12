@@ -7,6 +7,7 @@ import {
   updatePassword,
   signInWithPopup,
   GoogleAuthProvider,
+  signOut, // Import signOut
 } from "firebase/auth";
 
 export const doCreateUserWithEmailAndPassword = async (email, password) => {
@@ -25,7 +26,7 @@ export const doSignInWithGoogle = async () => {
 };
 
 export const doSignOut = () => {
-  return auth.signOut();
+  return signOut(auth); // Use the v9+ modular syntax for signOut
 };
 
 export const doPasswordReset = (email) => {
