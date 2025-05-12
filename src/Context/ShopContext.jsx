@@ -1,20 +1,18 @@
-import React, { createContext }   from "react";
+import React, { createContext, useState } from "react"; // Grouped React imports
 import all_product from "../Components/Assets/all_product";
-import { useState } from "react";
 
 export const ShopContext = createContext(null);
 
 const getDefaultCart = ()=> {
     let cart = {};
-    for (let index = 0; index < all_product.length+1; index++) {
-        cart[index] = 0;
+    // Iterate over the all_product array to use actual product IDs as keys
+    for (let i = 0; i < all_product.length; i++) {
+        cart[all_product[i].id] = 0; // Use product.id as the key
     }
     return cart;
 }
 
-
 const ShopContextProvider = (props) => {
-
     const [cartItems,setCartItems] = useState(getDefaultCart());
    
 
@@ -24,7 +22,10 @@ const ShopContextProvider = (props) => {
     }
     
     const removeFromCart = (itemId) => {
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        setCartItems((prev) => ({
+            ...prev,
+            [itemId]: Math.max(0, (prev[itemId] || 0) - 1) // Ensure count doesn't go below 0
+        }));
     }
 
 
@@ -33,7 +34,7 @@ const ShopContextProvider = (props) => {
         for(const item in cartItems)
         {
         if(cartItems[item]>0)
-            {
+            { // Ensure itemInfo is found before accessing new_price
                 let itemInfo = all_product.find((product)=>product.id===Number(item))
                 totalAmount += itemInfo.new_price * cartItems[item];
 
@@ -54,22 +55,27 @@ const ShopContextProvider = (props) => {
         return totalItem;
     }
 
+    // Function to clear the cart
+    const clearCart = () => {
+        setCartItems(getDefaultCart()); // Reset cart to its default empty state
+    };
 
 
+    const contextValue = { // Renamed to contextValue
+        getTotalCartItems,
+        getTotalCartAmount,
+        all_product,
+        cartItems,
+        addToCart,
+        removeFromCart,
+        clearCart // Expose clearCart to consumers
+    };
 
-    const contextvalue = {getTotalCartItems,getTotalCartAmount,all_product,cartItems,addToCart,removeFromCart}
     return (
-        <ShopContext.Provider value={contextvalue}>
+        <ShopContext.Provider value={contextValue}>
             {props.children}
         </ShopContext.Provider>
     )
 }
 
 export default ShopContextProvider;
-
-
-
-
-
-
-

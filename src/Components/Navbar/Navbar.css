@@ -100,3 +100,58 @@
    background: var(--accent-color-dark);
    color: white;
 }
+
+/* Hamburger Icon Styling (Hidden by default on larger screens) */
+.nav-hamburger {
+  display: none; /* Will be shown via media query */
+  font-size: 1.8rem; /* Adjust icon size as needed */
+  cursor: pointer;
+  color: var(--primary-text-color);
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Breakpoint for tablets and mobile phones (e.g., 768px and below) */
+/* You can adjust this breakpoint as needed based on where your layout breaks */
+@media (max-width: 768px) {
+  .navbar {
+    /* Adjust navbar padding for smaller screens if needed */
+    padding: 10px 20px;
+    /* Ensure items are spaced out, logo on left, hamburger/cart on right */
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    display: none; /* Hide the standard horizontal menu */
+    /* Styles for when it becomes a mobile menu (when .nav-menu-open is active) */
+    flex-direction: column;
+    align-items: center; /* Or flex-start if you prefer left-aligned items */
+    position: absolute;
+    top: 60px; /* Adjust based on your navbar's height */
+    left: 0;
+    width: 100%;
+    background-color: var(--container-bg-color); /* Or a specific mobile menu background */
+    padding: var(--font-size-medium) 0; /* Use font-size-medium for padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* Ensure it's above other content */
+  }
+
+  .nav-menu.nav-menu-open {
+    display: flex; /* Show the menu when this class is added by JavaScript */
+  }
+
+  .nav-menu li {
+    width: 100%; /* Make list items take full width for easier tapping */
+    text-align: center; /* Center text in mobile menu items */
+    padding: var(--font-size-small) 0; /* Use font-size-small for padding */
+  }
+
+  .nav-hamburger {
+    display: block; /* Show the hamburger icon on smaller screens */
+  }
+
+  /* You might want to adjust the gap for .nav-login-cart on smaller screens */
+  .nav-login-cart {
+    gap: 25px; /* Example: reduce gap */
+  }
+}
